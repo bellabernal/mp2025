@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Posture Fix - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Title Introduction Screen -->
+    <div class="title-intro">
+        <h1 class="intro-title">Tech Neck</h1>
+        <p class="intro-subtitle">Congratulations! You've just discovered the only wellness app designed exclusively for people who have absolutely no intention of leaving their chair — and that's okay.</p>
+    </div>
+
+    <!-- Main Interface -->
+    <div class="main-interface">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">Tech Neck</div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <div class="content-left">
+                <h1 class="welcome-title">Tech Neck</h1>
+                <h2 class="sub-title">We've accepted your fate, and now we're here to help you minimally reduce the consequences.</h2>
+                <p class="welcome-subtitle">Tech Neck is here, trying to save your posture — one lazy stretch at a time.</p>
+                
+                <div class="button-container">
+                    <button class="cta-button primary-btn" onclick="handleButtonClick(this, 'start')">  
+                        <span class="button-text">Straighten up (Kinda)</span>
+                    </button>
+                    <button class="cta-button secondary-btn" onclick="handleButtonClick(this, 'learn')">
+                        <span class="button-text">Reboot your neck</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <div class="video-container">
+                    <div class="video-frame">
+                        <div class="scan-line"></div>
+                        <video autoplay muted loop playsinline>
+                            <source src="guyatdesk/guy-at-desk.webm" type="video/webm">
+                            <source src="guyatdesk/guy-at-desk.mp4" type="video/mp4">
+                            <div style="padding: 2rem; text-align: center; color: #666;">
+                                Video preview unavailable
+                            </div>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <button class="audio-btn" id="muteBtn" onclick="toggleBackgroundMusic()" title="Toggle Background Music">
+                AUDIO
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

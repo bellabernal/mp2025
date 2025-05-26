@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Posture Detection</title>
+    <link rel="stylesheet" href="styles1.css">
+    <!-- Import MediaPipe libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Title Section -->
+    <div class="title-section" id="titleSection">
+        <h1>Body Posture Detection</h1>
+        <div class="click-indicator" id="letsBeginBtn">Lets Begin</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <div class="main-container">
+            <div class="video-section">
+                <div class="video-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <p class="status" id="status">Status: Ready to start</p>
+                <p class="instructions" id="instructions">Let's analyze your posture in real-time to help you maintain better body alignment.</p>
+                
+                <div class="loading" id="loading">
+                    Loading MediaPipe Pose model...
+                </div>
+                
+                <div class="controls">
+                    <button id="startBtn">Start Camera</button>
+                    <button id="detectBtn" disabled>Start Detection</button>
+                    <button id="stopBtn" disabled>Stop Detection</button>
+                </div>
+                
+                <div class="stats">
+                    <h3>Posture Statistics</h3>
+                    <div class="stats-row">
+                        <span class="stats-label">Shoulder Angle:</span>
+                        <span id="shoulderAngle">--°</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Neck Angle:</span>
+                        <span id="neckAngle">--°</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Posture Status:</span>
+                        <span id="postureStatus">Not detecting</span>
+                    </div>
+                    <div class="alert" id="postureAlert">
+                        Please correct your posture! Your neck or shoulders are not aligned properly.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="return-button click-indicator" id="returnBtn">Return</div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
